@@ -27,9 +27,12 @@ Using q as the language of choice, there should be 5 outcomes for this project:
 ```
 Notes:
 
-1. The choice of how to structure the output in terms of files, names, locations for each of the above outputs is entirely yours.
+1. The choice of how to structure the output in terms of files, names, locations for each of the above
+outputs is entirely yours.
 
-2. Treat the structure of the data and code as if it is production quality code that needs to run in a stable and supportable manner.
+2. Treat the structure of the data and code as if it is production quality code that needs to run in a stable
+and supportable manner.
 
-3. All of the above should be loaded to a online account (github or bitbucket) and the link should be shared with us over email, pointing to the location of each of the above 5 outcomes for our review.
+3. All of the above should be loaded to a online account (github or bitbucket) and the link should be shared
+with us over email, pointing to the location of each of the above 5 outcomes for our review.
 ```
