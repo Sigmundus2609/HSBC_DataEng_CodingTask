@@ -69,23 +69,23 @@ q)dates: 2000.01.01+1000000?31
 `q)times:1000000?24:00:00.000
 ```
 ```
-q)pair: `chfpln `chfeur `chfgbp `chfusd `chfczk `chfrub `chfhuf `chfjpy `chfsgd `chfnok
+q)pair: `chfpln`chfeur`chfgbp`chfusd`chfczk`chfrub`chfhuf`chfjpy`chfsgd`chfnok
 'chfsgd
 ```
 ```
 q)qtys: 100*1+1000000?100
 ```
 ```
-pxs: (1+1000000?.7)*4.0 0.98 0.76 0.92 200.0 2349.0 345.0 1235.0 2.4 756.0
+q) pxs: (1+1000000?.7)*4.0 0.98 0.76 0.92 200.0 2349.0 345.0 1235.0 2.4 756.0
 ```
 
 In order to ensure that the **pair** and **pxs** lists, representing the currency pairs and the purchase prices 
-respectively remain vectors of the same length it was necessary to create an auxiliary list that could be used latter for casting its original valuues. 
+respectively remain vectors of the same length it was necessary to create an auxiliary list that could be used later for casting its original valuues. 
 
 The list *ixs* was created for that purpose
 
 ```
-q)ixs:10000000?9
+q)ixs:1000000?9
 ```
 
 resulting in creation of the **pair** and **pxs** list in the final form below:
@@ -131,3 +131,12 @@ date       time         cp     qty    px
 ```
 
 ## Data saving <a name="data saving"></a>
+Once the tale is assigned to the *t*, it can be exported and stored on the HDD, In order to do that, one shall execute the following:
+
+```
+q)`:/home/marek/REPOS/Q//HSBC_DataEng_CodingTask/table set ([] date:dates;time:times;cp:pair;qty:qtys;px:pxs)
+`:/home/marek/REPOS/Q/table
+```
+the ` :/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/table` states for scucessfully saved file.
+
+Viola! the 
