@@ -5,6 +5,7 @@ Table of Contents
   * [Coding taks subject](#coding-task-subject)
   * [Prequisites](#prequisites)
     * [Table creation](#table-creation)
+    * [Data saving](#data-savingn)
 
 # Coding task subject <a name="Coding task subject"></a>
 ```
@@ -59,7 +60,7 @@ of the table above:
   
 each of which contains exactly same number of entrie aka is a vector of the same lenght.
 
-## Table creation <a name="Table  creation"></a>
+## Table creation <a name="Table creation"></a>
 
 ```
 q)dates: 2000.01.01+1000000?31
@@ -129,4 +130,4 @@ date       time         cp     qty    px
 ..
 ```
 
-## Saving the data <a name="saving-the-data"></a>
+## Data saving <a name="data saving"></a>
