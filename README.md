@@ -59,7 +59,7 @@ of the table above:
   
 each of which contains exactly same number of entrie aka is a vector of the same lenght.
 
-##Table creation <a name="Table  creation"></a>
+## Table creation <a name="Table  creation"></a>
 
 ```
 q)dates: 2000.01.01+1000000?31
@@ -128,3 +128,5 @@ date       time         cp     qty    px
 2000.01.13 20:35:14.769 chfczk 731800 353.8758 
 ..
 ```
+
+## Saving the data <a name="saving-the-data"></a>
