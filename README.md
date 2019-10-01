@@ -2,26 +2,29 @@
 
 ## Chapter 1 <a name="Coding task subject"></a>
 ```
-The purpose of this mini project is for you to create a table which holds a timeseries of pricing data with prices and sizes for different fx (foreign exchange) currencies and write a function (API) to calculate the VWAP (volume-weighted average price) for this data. If time permits, you can extend this to also write a TWAP (time-weighted average price) function.
-
+The purpose of this mini project is for you to create a table which holds a timeseries of 
+pricing data with prices and sizes for different fx (foreign exchange) currencies and 
+write a function (API) to calculate the VWAP (volume-weighted average price) for this data.
+If time permits, you can extend this to also write a TWAP (time-weighted average price) function.
+```
  
 
 Using q as the language of choice, there should be 5 outcomes for this project:
 
  
 
-1. An input file with data you have created in csv format
+  1. An input file with data you have created in csv format
 
-2. A function which, given a time range and a list of symbols as inputs, returns the VWAP (TWAP) for each of these symbols as a table
+  2. A function which, given a time range and a list of symbols as inputs, returns the VWAP (TWAP) for each of these symbols as a table
 
-3. A command to start a q process which will load this function
+  3. A command to start a q process which will load this function
 
-4. Example of how to call the function
+  4. Example of how to call the function
 
-5. Test(s) to ensure validity of code
+  5. Test(s) to ensure validity of code
 
  
-
+```
 Notes:
 
 1. The choice of how to structure the output in terms of files, names, locations for each of the above outputs is entirely yours.
