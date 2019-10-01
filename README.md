@@ -4,7 +4,7 @@ Table of Contents
 
   * [Coding taks subject](#coding-task-subject)
   * [Prequisites](#prequisites)
-    *[Table Creation](#table-creation)
+    * [Table creation](#table-creation)
 
 # Coding task subject <a name="Coding task subject"></a>
 ```
