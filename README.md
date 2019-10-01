@@ -4,8 +4,8 @@ Table of Contents
 
   * [Coding taks subject](#coding-task-subject)
   * [Prequisites](#prequisites)
-    * [Table creation](#table-creation)
-    * [Data saving](#data-savingn)
+    * [Table creation](##table-creation)
+    * [Data saving](##data-savingn)
 
 # Coding task subject <a name="Coding task subject"></a>
 ```
@@ -43,7 +43,7 @@ and supportable manner.
 3. All of the above should be loaded to a online account (github or bitbucket) and the link should be shared
 with us over email, pointing to the location of each of the above 5 outcomes for our review.
 ```
-## Prequisites <a name="Prequisites"></a>
+# Prequisites <a name="Prequisites"></a>
 In order to be able to progress with the task I was obliged to create a table with the data, of the format below:
 
 | date | time | CurrencyPair | Quantity | Price |
@@ -134,9 +134,9 @@ date       time         cp     qty    px
 Once the tale is assigned to the *t*, it can be exported and stored on the HDD, In order to do that, one shall execute the following:
 
 ```
-q)`:/home/marek/REPOS/Q//HSBC_DataEng_CodingTask/table set ([] date:dates;time:times;cp:pair;qty:qtys;px:pxs)
-`:/home/marek/REPOS/Q/table
+q)save `$"/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/t.csv"
+`:/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/t.csv
 ```
-the ` :/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/table` states for scucessfully saved file.
+the ` :/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/table` states for scucessfully saved file.
 
-Viola! the 
+Viola! the data that will be taken into account for further tasks is now in the $PATH/INPUT location.
