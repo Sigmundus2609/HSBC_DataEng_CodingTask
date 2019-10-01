@@ -1,6 +1,6 @@
 # HSBC_DataEng_CodingTask
 
-## Chapter 1 <a name="Coding task subject"></a>
+## Coding task subject <a name="Coding task subject"></a>
 ```
 The purpose of this mini project is for you to create a table which holds a timeseries of 
 pricing data with prices and sizes for different fx (foreign exchange) currencies and 
