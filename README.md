@@ -36,3 +36,6 @@ and supportable manner.
 3. All of the above should be loaded to a online account (github or bitbucket) and the link should be shared
 with us over email, pointing to the location of each of the above 5 outcomes for our review.
 ```
+## Prequisites <a name="Prequisites"></a>
+In order to be able to process with the taks I was obliged to create a table with the data, of the format below:
+| date | time | CurrencyPair | Quantity | Price |
