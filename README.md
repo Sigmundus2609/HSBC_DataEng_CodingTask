@@ -1,9 +1,10 @@
-#Table of Contents
+Table of Contents
 =================
 
 
   * [Coding taks subject](#coding-task-subject)
   * [Prequisites](#prequisites)
+    *[Table Creation](#table-creation)
 
 # Coding task subject <a name="Coding task subject"></a>
 ```
@@ -55,7 +56,10 @@ of the table above:
   -CurrencyPair
   -Quantity
   -Price
+  
 each of which contains exactly same number of entrie aka is a vector of the same lenght.
+
+##Table creation <a name="Table  creation"></a>
 
 ```
 q)dates: 2000.01.01+1000000?31
