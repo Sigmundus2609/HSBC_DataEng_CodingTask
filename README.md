@@ -141,3 +141,11 @@ the ` :/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/table` states for scuce
 
 Viola! the data that will be taken into account for further tasks is now in the $PATH/INPUT location.
 
+
+# Volume Weighted Average Price (VWAP)
+##Introduction
+The VWAP can be understood as a trading benchmark, used by investors to justify if their 
+purchase was benefitial or not, over a given period of time. It can be easily calculated, using 
+the following formula:
+
+$$VWAP=\frac{\sum Price\times Volume}{\sum Volume}$$
