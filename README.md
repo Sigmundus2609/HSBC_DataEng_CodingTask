@@ -148,6 +148,5 @@ The VWAP can be understood as a trading benchmark, used by investors to justify 
 purchase was benefitial or not, over a given period of time. It can be easily calculated, using 
 the following formula:
 
-$$
+
 VWAP=\frac{\sum Price\times Volume}{\sum Volume}
-$$
