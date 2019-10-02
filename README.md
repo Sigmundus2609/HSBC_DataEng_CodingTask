@@ -203,9 +203,51 @@ Input from the user side shall be **date range** and optionally the currency pai
 
 
 
-#Script structure
+#Q Script structure
 
- Loading the table that was previously prepared:
- ```
- t:("DTSHF";enlist ",") 0:  `:/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/t.csv
+The `Qscript.sh` file is a bash script that passes to the Qscript.q all necessary parameters like: the initial and final dates for calculation of the VWAP.
+
+Line by line the Qcript.q script does the following
+  Casting the variables to the form, used by the query function
+
+  	```
+	startDate:"D"$raze d[`startDate]
+	endDate:"D"$raze d[`endDate]
+	currencyPair:`$ raze d[`currencyPair]
+	```
+
+
+   Loading the table that was previously prepared:
+ 	```
+	 t:("DTSHF";enlist ",") 0:  `:/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/t.csv
+	```
+
+  Defining the function to query for VWAP
+	```
+	VWAP:{[startDate;endDate;pair] select vwap: qty wavg px by cp from t where date within (startDate;endDate), cp in pair}
+	```
+
+  Passing the variables to the function vwap
+  	```
+	vwap:VWAP[startDate;endDate;currencyPair]
+	```
+	Showing the results;
+	```
+	show "Requested result:"
+	show vwap
+	```
+
+`Below example listening`
+```
+marek@mgruchal ~/REPOS/Q/HSBC_DataEng_CodingTask $ ./Qscript.sh 2000.01.01 2000.01.20 chfpln,chfusd
+KDB+ 3.6 2019.08.20 Copyright (C) 1993-2019 Kx Systems
+l64/ 4(16)core 7882MB marek mgruchal 127.0.1.1 EXPIRE 2020.08.30 siara39@op.pl KOD #4166537
+
+"Calculating VWAP"
+"Requested result:"
+cp    | vwap    
+------| --------
+chfpln| 1586.031
+chfusd| 836.6778
+
 ```
