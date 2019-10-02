@@ -4,8 +4,8 @@ Table of Contents
 
   * [Coding taks subject](#coding-task-subject)
   * [Prequisites](#prequisites)
-    * [Table creation](##able-creation)
-    * [Data saving](#data-savingn)
+    * [Table creation](#table-creation)
+    * [Data saving](#Data-saving)
 
 # Coding task subject
 ```
