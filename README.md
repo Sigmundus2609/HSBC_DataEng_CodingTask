@@ -4,10 +4,10 @@ Table of Contents
 
   * [Coding taks subject](#coding-task-subject)
   * [Prequisites](#prequisites)
-    * [Table creation](##table-creation)
-    * [Data saving](##data-savingn)
+    * [Table creation](##able-creation)
+    * [Data saving](#data-savingn)
 
-# Coding task subject <a name="Coding task subject"></a>
+# Coding task subject
 ```
 The purpose of this mini project is for you to create a table which holds a timeseries of 
 pricing data with prices and sizes for different fx (foreign exchange) currencies and 
@@ -43,7 +43,7 @@ and supportable manner.
 3. All of the above should be loaded to a online account (github or bitbucket) and the link should be shared
 with us over email, pointing to the location of each of the above 5 outcomes for our review.
 ```
-# Prequisites <a name="Prequisites"></a>
+# Prequisites
 In order to be able to progress with the task I was obliged to create a table with the data, of the format below:
 
 | date | time | CurrencyPair | Quantity | Price |
@@ -60,7 +60,7 @@ of the table above:
   
 each of which contains exactly same number of entrie aka is a vector of the same lenght.
 
-## Table creation <a name="Table creation"></a>
+## Table creation
 
 ```
 q)dates: 2000.01.01+1000000?31
@@ -130,7 +130,7 @@ date       time         cp     qty    px
 ..
 ```
 
-## Data saving <a name="data saving"></a>
+## Data saving
 Once the tale is assigned to the *t*, it can be exported and stored on the HDD, In order to do that, one shall execute the following:
 
 ```
@@ -140,3 +140,4 @@ q)save `$"/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/t.csv"
 the ` :/home/marek/REPOS/Q/HSBC_DataEng_CodingTask/INPUT/table` states for scucessfully saved file.
 
 Viola! the data that will be taken into account for further tasks is now in the $PATH/INPUT location.
+
