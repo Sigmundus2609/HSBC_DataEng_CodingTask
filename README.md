@@ -207,6 +207,12 @@ Input from the user side shall be **date range** and optionally the currency pai
 
 The `Qscript.sh` file is a bash script that passes to the Qscript.q all necessary parameters like: the initial and final dates for calculation of the VWAP.
 
+**IMPORTANT**
+```
+Please edit the QPATH variable in the Qscript.sh (line28, so that it matches the path of your q framework files
+```
+ 
+
 Line by line the Qcript.q script does the following
   Casting the variables to the form, used by the query function
 
