@@ -23,6 +23,9 @@ function availablePairs()
 MAIN-----------
 if [ $# -lt 3 ]; then
 	usage
+	echo ""
+	echo "The pairs present in the loaded table are:"
+	echo ""
 	availablePairs
 else
 	QHOME=~/q rlwrap -r ~/q/l64/q /home/marek/REPOS/Q/HSBC_DataEng_CodingTask/Qscript.q -startDate $1 -endDate $2 -currencyPair $3

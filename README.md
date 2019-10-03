@@ -228,14 +228,14 @@ Line by line the Qcript.q script does the following
 	```
 
   Passing the variables to the function vwap
-  	```
-	vwap:VWAP[startDate;endDate;currencyPair]
-	```
+```
+  	vwap:VWAP[startDate;endDate;currencyPair]
+```
 	Showing the results;
-	```
+```	
 	show "Requested result:"
 	show vwap
-	```
+```
 
 `Below example listening`
 ```
