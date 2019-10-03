@@ -19,3 +19,4 @@ VWAP:{[startDate;endDate;pair] select vwap: qty wavg px by cp from t where date 
 vwap:VWAP[startDate;endDate;currencyPair]
 show "Requested result:"
 show vwap
+\\

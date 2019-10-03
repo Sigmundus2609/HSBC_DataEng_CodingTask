@@ -16,20 +16,34 @@ function usage()
 #--------------------------------------
 function availablePairs()
 {
-	QHOME=~/q rlwrap -r ~/q/l64/q /home/marek/REPOS/Q/HSBC_DataEng_CodingTask/Qpair.q
+	$HOME/$QPATH/q $PWD/Qpair.q
 	exit 0;
 }
 #----------------------
-MAIN-----------
+#MAIN
+#----------------------
+
+#PATH DECLARATION
+#Please declare the path to your q framework files
+QPATH='q/l64'
+
 if [ $# -lt 3 ]; then
-	usage
 	echo ""
+	echo "You have passed less than 3 parameters, please reffer to the help menu"
 	echo "The pairs present in the loaded table are:"
 	echo ""
+	usage
 	availablePairs
-else
-	QHOME=~/q rlwrap -r ~/q/l64/q /home/marek/REPOS/Q/HSBC_DataEng_CodingTask/Qscript.q -startDate $1 -endDate $2 -currencyPair $3
+elif [ $# -eq 3 ];then
+	$HOME/$QPATH/q $PWD/Qscript.q -startDate $1 -endDate $2 -currencyPair $3
 	exit 0;
+elif [ $# -gt 3 ]; then
+	echo ""
+	echo "You have passed more than 3 parameters, please reffer to the help menu"
+	echo "The pairs present in the loaded table are:"
+	echo ""
+	usage
+	availablePairs
 fi
 
 
