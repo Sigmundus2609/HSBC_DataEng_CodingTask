@@ -6,7 +6,12 @@ Table of Contents
   * [Prequisites](#prequisites)
     * [Table creation](#table-creation)
     * [Data saving](#Data-saving)
-
+  * [Volume Weighted Average Price (VWAP) Function](#Volume-Weighted-Average-Price-VWAP-Function)
+  * [Q Script structure](#Q-Script-structure)
+  * [Time Weighted Average Price (TWAP) Introduction](#Time-Weighted-Average-Price-TWAP-Introduction)
+  * [ Usage example](#-Usage-example)
+ 
+  
 # Coding task subject
 ```
 The purpose of this mini project is for you to create a table which holds a timeseries of 
@@ -191,14 +196,15 @@ or specyfically, staying coherent with the subject of the task:
 q)select vwap: qty wavg px by cp from t where date within 2000.01.01 2000.01.30, cp=`chfpln
 ```
 which results in returning the following table (currency pair and vwap)
+```
 cp    | vwap    
 ------| --------
 chfpln| 1583.461
-
+```
 
 -------------------------
 
-Input from the user side shall be **date range** and optionally the currency pair of user's
+Input from the user side shall be **date range** and the currency pair of user's
  interest with default execution set to show the VWAP for all pairs.
 
 
@@ -275,8 +281,9 @@ TWAP:{[startDate;endDate;pair] select open:first px, close: last px, lo:min px, 
 #Usage example
 
 **WARNING**
-Before you start use the script, please ensure that you have fed the line #28 of `Qscript.sh` file with
-correct path pointing to the directory where you hold your q framwerok files!
+
+**Before you start use the script, please ensure that you have fed the line #28 of `Qscript.sh` file with
+correct path pointing to the directory where you hold your q framwerok files!**
 
 Once the line is set correctly, please execute the following form the path the script is located:
 ```
