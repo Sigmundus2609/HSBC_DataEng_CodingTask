@@ -9,7 +9,7 @@ Table of Contents
   * [Volume Weighted Average Price (VWAP) Function](#Volume-Weighted-Average-Price-VWAP-Function)
   * [Q Script structure](#Q-Script-structure)
   * [Time Weighted Average Price (TWAP) Introduction](#Time-Weighted-Average-Price-TWAP-Introduction)
-  * [ Usage example](#-Usage-example)
+  * [Usage example](#-Usage-example)
  
   
 # Coding task subject
@@ -26,15 +26,19 @@ Using q as the language of choice, there should be 5 outcomes for this project:
  
 
   1. An input file with data you have created in csv format
+  		*Stored in the INPUT directory*
 
   2. A function which, given a time range and a list of symbols as inputs, returns the VWAP (TWAP) for each of these symbols as a table
+  		*Stored in the QScripts directory*
 
   3. A command to start a q process which will load this function
+  		*Please see Usage example section of this document*
 
   4. Example of how to call the function
+  		*Please see the Usage example section of this document*
 
   5. Test(s) to ensure validity of code
-
+  		*Please see test section fo this document*
  
 ```
 Notes:
@@ -209,7 +213,7 @@ Input from the user side shall be **date range** and the currency pair of user's
 
 
 
-##Q Script structure
+## Q Script structure
 
 The `Qscript.sh` file is a bash script that passes to the Qscript.q all necessary parameters like: the initial and final dates for calculation of the VWAP.
 
@@ -278,7 +282,7 @@ TWAP:{[startDate;endDate;pair] select open:first px, close: last px, lo:min px, 
 
 ```
 
-#Usage example
+# Usage example
 
 **WARNING**
 
