@@ -9,7 +9,8 @@ Table of Contents
   * [Volume Weighted Average Price (VWAP) Function](#Volume-Weighted-Average-Price-VWAP-Function)
   * [Q Script structure](#Q-Script-structure)
   * [Time Weighted Average Price (TWAP) Introduction](#Time-Weighted-Average-Price-TWAP-Introduction)
-  * [Usage example](#-Usage-example)
+  * [Usage example](#Usage-example)
+  * [Tests performed](#Tests-performed)
  
   
 # Coding task subject
