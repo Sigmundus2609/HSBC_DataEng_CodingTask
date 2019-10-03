@@ -361,3 +361,83 @@ chfusd| 848.7513
 ```
 
 The VWAP for dates within 2000.01.01 and 2000.01.04 for two currency pairs are returned.
+
+# Tests performed
+
+- [x] Checking that the VWAP.q and TWAP.q are properly called via the `Qscript.sh` bash script
+
+```
+marek@mgruchal ~/REPOS/Q/HSBC_DataEng_CodingTask $ ./Qscript.sh vwap 2000.01.01 2000.01.05 chfpln
+KDB+ 3.6 2019.08.20 Copyright (C) 1993-2019 Kx Systems
+l64/ 4(16)core 7882MB marek mgruchal 127.0.1.1 EXPIRE 2020.08.30 siara39@op.pl KOD #4166537
+
+"Calculating VWAP"
+"Requested result:"
+cp    | vwap   
+------| -------
+chfpln| 1588.57
+marek@mgruchal ~/REPOS/Q/HSBC_DataEng_CodingTask $ ./Qscript.sh twap 2000.01.01 2000.01.05 chfpln
+KDB+ 3.6 2019.08.20 Copyright (C) 1993-2019 Kx Systems
+l64/ 4(16)core 7882MB marek mgruchal 127.0.1.1 EXPIRE 2020.08.30 siara39@op.pl KOD #4166537
+
+"Calculating TWAP"
+"Requested TWAP result:"
+date      | open      close     lo        hi       TWAP    
+----------| -----------------------------------------------
+2000.01.01| 0.7710761 2954.875  0.7600032 3993.153 1737.39 
+2000.01.02| 1.064102  0.801557  0.7604753 3992.887 998.8783
+2000.01.03| 1.247656  0.9082884 0.760047  3992.636 998.888 
+2000.01.04| 0.9275889 3623.797  0.7600095 3992.706 1904.548
+2000.01.05| 1.216297  3145.897  0.7600941 3992.976 1785.212
+```
+
+- [x] Checking if the help menu returns understandable output and if the `Qpair.q` script is called 
+properly.
+
+```
+marek@mgruchal ~/REPOS/Q/HSBC_DataEng_CodingTask $ ./Qscript.sh twap 2000.01.01 2000.01.05
+
+You have passed less than 4 parameters, please reffer to the help menu
+The pairs present in the loaded table are:
+
+
+This script is designed pass the user input to the Q script
+that does import the csv table with currency transaction data and
+calculates the TWAP/VWAP for the given currency pair over requested period
+#############################################################
+# Script is designed to be used as follows: ./Qscript.sh [twap/vwap] [startDate] [endDate] [currencyPair]
+# Example ./Qscript.sh 2000.01.01 2000.01.03 chfpln
+# Above command will return the VWAP for the chfpln pair for the indicated period
+#############################################################
+KDB+ 3.6 2019.08.20 Copyright (C) 1993-2019 Kx Systems
+l64/ 4(16)core 7882MB marek mgruchal 127.0.1.1 EXPIRE 2020.08.30 siara39@op.pl KOD #4166537
+
+cp    
+------
+chfusd
+chfsgd
+chfczk
+chfeur
+chfpln
+chfrub
+InitialDate FinalDate 
+----------------------
+2000.01.01  2000.01.31
+
+```
+
+- [x] Checking if the repositorycan be used on a different machine/OS.
+
+```
+In order to prove that I have installed fresh mandriva distro on the VM and plled the last up to date
+version of the code, installed q in different location and checked if the output of those remains
+consistent with above ones.
+```
+
+- [x] 
+
+What I'd aim to test if this was for the wide community of users:
+
+- [ ] Compatibility with other shells (csh)
+- [ ] Compatibility with older version of KDB+ (whole test aimed to ensure proper working under the 
+`KDB+ 3.6 2019.08.20` version)
