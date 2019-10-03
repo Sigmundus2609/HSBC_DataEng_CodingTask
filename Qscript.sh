@@ -16,7 +16,7 @@ function usage()
 #--------------------------------------
 function availablePairs()
 {
-	$HOME/$QPATH/q $PWD/Qpair.q
+	$HOME/$QPATH/q $PWD/QScripts/Qpair.q
 	exit 0;
 }
 #----------------------
@@ -29,14 +29,14 @@ QPATH='q/l64'
 
 if [ $# -lt 4 ]; then
 	echo ""
-	echo "You have passed less than 3 parameters, please reffer to the help menu"
+	echo "You have passed less than 4 parameters, please reffer to the help menu"
 	echo "The pairs present in the loaded table are:"
 	echo ""
 	usage
 	availablePairs
 elif [ $# -gt 4 ]; then
 	echo ""
-	echo "You have passed more than 3 parameters, please reffer to the help menu"
+	echo "You have passed more than 4 parameters, please reffer to the help menu"
 	echo "The pairs present in the loaded table are:"
 	echo ""
 	usage
@@ -46,13 +46,13 @@ fi
 case "$1" in
 	twap)
 	if [ $# -eq 4 ];then
-		$HOME/$QPATH/q $PWD/TWAP.q -startDate $2 -endDate $3 -currencyPair $4
+		$HOME/$QPATH/q $PWD/QScripts/TWAP.q -startDate $2 -endDate $3 -currencyPair $4
 		exit 0;
 	fi
 	;;
 	vwap)
 	if [ $# -eq 4 ];then
-		$HOME/$QPATH/q $PWD/VWAP.q -startDate $2 -endDate $3 -currencyPair $4
+		$HOME/$QPATH/q $PWD/QScripts/VWAP.q -startDate $2 -endDate $3 -currencyPair $4
 		exit 0;
 	fi
 	;;

@@ -203,7 +203,7 @@ Input from the user side shall be **date range** and optionally the currency pai
 
 
 
-#Q Script structure
+##Q Script structure
 
 The `Qscript.sh` file is a bash script that passes to the Qscript.q all necessary parameters like: the initial and final dates for calculation of the VWAP.
 
@@ -211,7 +211,7 @@ The `Qscript.sh` file is a bash script that passes to the Qscript.q all necessar
 ```
 Please edit the QPATH variable in the Qscript.sh (line28, so that it matches the path of your q framework files
 ```
- 
+
 
 Line by line the Qcript.q script does the following
   Casting the variables to the form, used by the query function
@@ -257,3 +257,95 @@ chfpln| 1586.031
 chfusd| 836.6778
 
 ```
+
+# Time Weighted Average Price (TWAP) Introduction
+
+This is the benchmarkt which function can be expressed mathematically as the average of four
+prices during the day: price at open, price at close, max during the given day and min during the 
+given day.
+
+The Q script that is responsible for calculating the TWAP is a twin one to the VWAP one.
+The only difference there is a query that is used. In this case it is as shown below:
+
+```
+TWAP:{[startDate;endDate;pair] select open:first px, close: last px, lo:min px, hi:max px, TWAP:avg(min px; max px; first px; last px) by date from t where date within (startDate;endDate), cp in pair}
+
+```
+
+#Usage example
+
+**WARNING**
+Before you start use the script, please ensure that you have fed the line #28 of `Qscript.sh` file with
+correct path pointing to the directory where you hold your q framwerok files!
+
+Once the line is set correctly, please execute the following form the path the script is located:
+```
+./Qscript.sh -h
+```
+this shall return you the following, help menu, output:
+```
+marek@mgruchal ~/REPOS/Q/HSBC_DataEng_CodingTask $ ./Qscript.sh 2000.01.01 2000.01.23 chfpln
+
+You have passed less than 4 parameters, please reffer to the help menu
+The pairs present in the loaded table are:
+
+
+This script is designed pass the user input to the Q script
+that does import the csv table with currency transaction data and
+calculates the TWAP/VWAP for the given currency pair over requested period
+#############################################################
+# Script is designed to be used as follows: ./Qscript.sh [twap/vwap] [startDate] [endDate] [currencyPair]
+# Example ./Qscript.sh 2000.01.01 2000.01.03 chfpln
+# Above command will return the VWAP for the chfpln pair for the indicated period
+#############################################################
+KDB+ 3.6 2019.08.20 Copyright (C) 1993-2019 Kx Systems
+l64/ 4(16)core 7882MB marek mgruchal 127.0.1.1 EXPIRE 2020.08.30 siara39@op.pl KOD #4166537
+
+cp    
+------
+chfusd
+chfsgd
+chfczk
+chfeur
+chfpln
+chfrub
+InitialDate FinalDate 
+----------------------
+2000.01.01  2000.01.31
+
+```
+
+The prompt lists available currency pairs and the time range for the given set.
+
+Example1:
+```
+marek@mgruchal ~/REPOS/Q/HSBC_DataEng_CodingTask $ ./Qscript.sh twap 2000.01.01 2000.01.4 chfusd
+KDB+ 3.6 2019.08.20 Copyright (C) 1993-2019 Kx Systems
+l64/ 4(16)core 7882MB marek mgruchal 127.0.1.1 EXPIRE 2020.08.30 siara39@op.pl KOD #4166537
+
+"Calculating TWAP"
+"Requested TWAP result:"
+date      | open     close    lo       hi       TWAP    
+----------| --------------------------------------------
+2000.01.01| 3.474475 3.325189 2.400032 2099.247 527.1117
+2000.01.02| 2.499072 1686.776 2.400535 2099.236 947.7279
+2000.01.03| 1553.803 3.11718  2.400055 2098.914 914.5586
+2000.01.04| 1387.478 2.750105 2.400484 2099.222 872.9626
+```
+The TWAP for dates within 2000.01.01 and 2000.01.04 for chfusd are returned
+
+Example2:
+```
+marek@mgruchal ~/REPOS/Q/HSBC_DataEng_CodingTask $ ./Qscript.sh vwap 2000.01.01 2000.01.4 chfusd,chfpln
+KDB+ 3.6 2019.08.20 Copyright (C) 1993-2019 Kx Systems
+l64/ 4(16)core 7882MB marek mgruchal 127.0.1.1 EXPIRE 2020.08.30 siara39@op.pl KOD #4166537
+
+"Calculating VWAP"
+"Requested result:"
+cp    | vwap    
+------| --------
+chfpln| 1587.693
+chfusd| 848.7513
+```
+
+The VWAP for dates within 2000.01.01 and 2000.01.04 for two currency pairs are returned.
