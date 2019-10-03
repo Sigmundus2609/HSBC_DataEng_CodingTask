@@ -434,10 +434,24 @@ version of the code, installed q in different location and checked if the output
 consistent with above ones.
 ```
 
-- [x] 
+- [x] Numerical chcecking for VWAP solutions. In order to do that the new table of the following scheme was created:
+```
+q)t
+date       time         cp     qty    px       
+-----------------------------------------------
+2000.01.28 10:45:54.620 chfpln 100 1 
+2000.01.24 05:07:59.730 chfpln 200 2 
+2000.01.15 04:29:18.742 chfpln 300 4
+
+```
+
+and the numerical output of the VWAP function was checked and compared with calculation "by hand". Results did match, both were 2.8(3).
+
+- [x] Numerical chcecking for TWAP solutions. Methodology was similar to above. New table was created, with limited number of entries and results were cross checked using simple excel formulas.
+
 
 What I'd aim to test if this was for the wide community of users:
 
-- [ ] Compatibility with other shells (csh)
+- [ ] Compatibility with other shells (csh).
 - [ ] Compatibility with older version of KDB+ (whole test aimed to ensure proper working under the 
 `KDB+ 3.6 2019.08.20` version)
